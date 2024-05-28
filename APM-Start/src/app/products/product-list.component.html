@@ -7,12 +7,12 @@
             <div class="cl-md-2">Filter by : </div>
             <div class="cl-md-4">
                 <input type="text"
-                [(ngModel)] = 'listFiltered'>
+                [(ngModel)] = 'listFilter'>
             </div>
         </div>
         <div class="row">
-            <div class="cl-md-6" *ngIf='listFiltered'>
-                <h4>Filtered by :- {{listFiltered}}</h4>
+            <div class="cl-md-6" *ngIf='listFilter'>
+                <h4>Filtered by :- {{listFilter}}</h4>
             </div>
         </div>
         <div class="table-responsive">
@@ -32,7 +32,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor='let product of products'>
+                    <tr *ngFor='let product of filteredProducts'>
                         <td>
                             <img *ngIf='showImage' 
                                 [src]='product.imageUrl'
@@ -41,10 +41,12 @@
                                 [style.margin.px]='imageMargin'>
                         </td>
                         <td>{{product.productName}}</td>
-                        <td>{{product.productCode | lowercase}}</td>
+                        <td>{{product.productCode | lowercase | convertToSpaces:'-'}}</td>
                         <td>{{product.releaseDate}}</td>
                         <td>{{product.price | currency:'INR': 'symbol':'1.2-2'}}</td>
-                        <td>{{product.starRating}}</td>
+                        <td><pm-star [rating]='product.starRating'
+                                    (ratingClicked) = 'OnRatingClicked($event)'
+                            ></pm-star></td>
                     </tr>
                 </tbody>
             </table>
