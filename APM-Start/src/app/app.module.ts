@@ -10,6 +10,7 @@ import { StarComponent } from './shared/star.component';
 import { ProductDetailComponent } from './products/product-detail.component';
 import { WelcomeComponent } from './home/welcome.component';
 import { RouterModule } from '@angular/router';
+import { ProductDetailGuard } from './products/product-detail.guard';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { RouterModule } from '@angular/router';
         component: ProductListComponent
       },
       {
-        path: 'product/:id',
+        path: 'products/:id',
+        canActivate: [ProductDetailGuard],
         component: ProductDetailComponent
       },
       {
