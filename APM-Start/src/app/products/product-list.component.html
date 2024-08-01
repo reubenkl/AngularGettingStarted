@@ -57,3 +57,39 @@
         </div>
     </div>
 </div>
+
+<div>
+    <ng-container>
+        <mat-button-toggle-group>
+            <mat-button-toggle class="split-button-2">Button 2</mat-button-toggle>
+            <mat-button-toggle class="split-button-2 drop-down-button" [matMenuTriggerFor]="dropdownMenuTwo">
+              <mat-icon>arrow_drop_down</mat-icon>
+            </mat-button-toggle>
+        </mat-button-toggle-group>
+          
+        <mat-menu #dropdownMenuTwo="matMenu">
+            <button mat-menu-item>One</button>
+            <button mat-menu-item>Two</button>
+            <button mat-menu-item>Three</button>
+        </mat-menu>
+    </ng-container>
+</div>
+
+<div class="split-button-container">
+    <ng-container>
+        <button
+            mat-stroked-button
+            type="button"
+            class="found-button"
+        >
+            <div class="inside-button">
+                <span class="found">
+                    {{ "Found" }}
+                </span>
+                <span class="chevron-button">
+                    <mat-icon fontIcon="keyboard_arrow_down" id="chevron">V</mat-icon>
+                </span>
+            </div>
+        </button>
+    </ng-container>
+</div>

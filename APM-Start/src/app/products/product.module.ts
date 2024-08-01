@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { ProductDetailGuard } from './product-detail.guard';
 import { SharedModule } from '../shared/shared.module';
+import { MatButtonModule, MatButtonToggle, MatButtonToggleModule, MatIconModule, MatMenuModule, MatTooltipModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,13 @@ import { SharedModule } from '../shared/shared.module';
         component: ProductDetailComponent
       },
     ]),
-    SharedModule
+    SharedModule,
+    MatButtonModule,
+    MatIconModule,
+    MatTooltipModule,
+    MatButtonToggleModule,
+    MatMenuModule,
+    FormsModule
   ]
 })
 export class ProductModule { }

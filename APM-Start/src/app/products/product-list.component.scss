@@ -1,0 +1,65 @@
+th {
+    color: #337AB7;
+}
+
+.split-button-container{
+    border: 2px solid blue;
+    width: 200px; 
+    height: 100px; 
+    position: relative; 
+    left: 200px;
+}
+
+
+.found {
+    background-color: greenyellow;
+}
+.chevron-button {
+    background-color: greenyellow;
+}
+
+.inside-button{
+    background-color: aquamarine;
+    display: flex;
+}
+
+
+.chevron-button::before {
+    content: '';
+    border-left: 1px solid #1074c3;
+    height: 38px;
+    position: absolute;
+    margin-left: 5px;
+}
+
+#chevron {
+    padding: 4px 0px 0px 14px;
+}
+
+
+
+p {
+    font-family: Lato;
+  }
+  
+  mat-button-toggle {
+    color: white; 
+  }
+  
+  .mat-button-toggle-checked {
+    color: white; 
+  }
+  
+  ::ng-deep mat-button-toggle.split-button-1 {
+    background-color: blue;
+  }
+  
+  ::ng-deep mat-button-toggle.split-button-2 {
+    background-color: green;
+  }
+  
+  ::ng-deep mat-button-toggle.drop-down-button {
+    margin-left: 1px;
+  }
+
+
